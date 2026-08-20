@@ -1,1 +1,124 @@
-<!doctype html><html lang="es-CR"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>ZoFranca CR</title></head><body><div id="app"></div><script type="module" src="/src/main.js"></script></body></html>
+<!DOCTYPE html>
+<html lang="es-CR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ProComer - Comercio Internacional Costa Rica</title>
+  <link rel="stylesheet" href="src/style.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="nav-brand">
+        <div class="logo-icon">PC</div>
+        <span>ProComer</span>
+      </div>
+      <ul class="nav-links">
+        <li><a href="#inicio" class="nav-link active">Inicio</a></li>
+        <li class="dropdown">
+          <a href="#servicios" class="nav-link">Servicios &#9662;</a>
+          <ul class="dropdown-menu">
+            <li><a href="#envios">Envíos</a></li>
+            <li><a href="#programas">Programas</a></li>
+            <li><a href="#eventos">Eventos</a></li>
+            <li><a href="#plataformas">Plataformas de Comercio</a></li>
+          </ul>
+        </li>
+        <li><a href="#contacto" class="nav-link">Contáctenos</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section id="inicio" class="carousel-section">
+    <div class="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-slide active">
+          <img src="images/slide1.svg" alt="ProComer - Impulsando el comercio">
+        </div>
+        <div class="carousel-slide">
+          <img src="images/slide2.svg" alt="Oportunidades de negocio">
+        </div>
+        <div class="carousel-slide">
+          <img src="images/slide3.svg" alt="Inversión y crecimiento">
+        </div>
+        <div class="carousel-slide">
+          <img src="images/slide4.svg" alt="Exportaciones costarricenses">
+        </div>
+      </div>
+      <button class="carousel-btn prev" onclick="moveSlide(-1)">&#10094;</button>
+      <button class="carousel-btn next" onclick="moveSlide(1)">&#10095;</button>
+      <div class="carousel-dots">
+        <span class="dot active" onclick="goToSlide(0)"></span>
+        <span class="dot" onclick="goToSlide(1)"></span>
+        <span class="dot" onclick="goToSlide(2)"></span>
+        <span class="dot" onclick="goToSlide(3)"></span>
+      </div>
+    </div>
+  </section>
+
+  <section class="about-section">
+    <div class="about-container">
+      <div class="about-card card-vision">
+        <div class="card-icon">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#02A1FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+        </div>
+        <h3>Visión</h3>
+        <p>Ser la institución líder en Costa Rica para la promoción del comercio internacional, impulsando la competitividad de las empresas nacionales en los mercados globales.</p>
+      </div>
+      <div class="about-card card-mision">
+        <div class="card-icon">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#2A77D1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+        </div>
+        <h3>Misión</h3>
+        <p>Fomentar el crecimiento económico del país mediante la facilitación de alianzas comerciales estratégicas, brindando asesoría y soporte integral a emprendedores y empresas.</p>
+      </div>
+      <div class="about-card card-quienes">
+        <div class="card-icon">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#8464CE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <h3>Quiénes Somos</h3>
+        <p>ProComer es la entidad encargada de promover las exportaciones de Costa Rica, conectando a las empresas locales con oportunidades de negocio internacionales y herramientas de crecimiento.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer id="contacto" class="footer">
+    <div class="footer-container">
+      <p>&copy; 2026 ProComer. Todos los derechos reservados.</p>
+      <p>Costa Rica | info@procomer.go.cr</p>
+    </div>
+  </footer>
+
+  <script>
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.carousel-slide');
+    const dots = document.querySelectorAll('.dot');
+    let autoSlide;
+
+    function showSlide(index) {
+      slides[currentSlide].classList.remove('active');
+      dots[currentSlide].classList.remove('active');
+      currentSlide = (index + slides.length) % slides.length;
+      slides[currentSlide].classList.add('active');
+      dots[currentSlide].classList.add('active');
+    }
+
+    function moveSlide(direction) {
+      showSlide(currentSlide + direction);
+      resetAutoSlide();
+    }
+
+    function goToSlide(index) {
+      showSlide(index);
+      resetAutoSlide();
+    }
+
+    function resetAutoSlide() {
+      clearInterval(autoSlide);
+      autoSlide = setInterval(() => showSlide(currentSlide + 1), 3000);
+    }
+
+    autoSlide = setInterval(() => showSlide(currentSlide + 1), 3000);
+  </script>
+</body>
+</html>
