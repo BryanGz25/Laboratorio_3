@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es-CR">
+<head>
+  <meta charset="UTF-8">
+  <title>Panel del Analista - Clasificación IA</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <div class="app-container">
+    <aside class="sidebar">
+      <div class="sidebar-brand">Panel de Inversión y Análisis</div>
+      <a href="#" class="nav-link active">Centro del Analista</a>
+      <a href="cumplimiento.html" class="nav-link">Cumplimiento</a>
+      <a href="dashboard.html" class="nav-link">Panel General</a>
+      <a href="#" class="nav-link">Registro de Auditoría</a>
+    </aside>
+
+    <main class="main-content">
+      <header class="header">
+        <h1>Panel de Pre-clasificación con IA</h1>
+        <p>Revise y valide las clasificaciones generadas por el sistema para las solicitudes de inversión recibidas.</p>
+      </header>
+
+      <section class="metrics-grid">
+        <div class="metric-card">
+          <h3>Total Pendientes</h3>
+          <div class="metric-value">142</div>
+          <span class="metric-sub up">&uarr; 12% vs semana anterior</span>
+        </div>
+        <div class="metric-card">
+          <h3>Aprobadas Automáticamente por IA</h3>
+          <div class="metric-value">89</div>
+          <span class="metric-sub">Requiere aprobación final</span>
+        </div>
+        <div class="metric-card">
+          <h3>Revisión Manual Requerida</h3>
+          <div class="metric-value">34</div>
+          <span class="metric-sub warning">Puntuación de afinidad &lt; 70%</span>
+        </div>
+        <div class="metric-card">
+          <h3>Salud del Sistema</h3>
+          <div class="metric-value">94%</div>
+          <span class="metric-sub up">Confianza del modelo estable</span>
+        </div>
+      </section>
+
+      <section class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Nombre de la Empresa</th>
+              <th>Tipo de Solicitud</th>
+              <th>Categoría IA</th>
+              <th>Puntuación de Afinidad</th>
+              <th>Resumen IA</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Acme Corp Logistics</strong><br><small style="color:var(--neutral-muted)">SOL-2023-8841</small></td>
+              <td>Expansión de Infraestructura</td>
+              <td><span class="badge badge-recommended">Recomendada</span></td>
+              <td><strong>92%</strong></td>
+              <td>Alta alineación con metas de transporte regional. Las finanzas muestran alta liquidez.</td>
+            </tr>
+            <tr>
+              <td><strong>Quantum Energy Solutions</strong><br><small style="color:var(--neutral-muted)">SOL-2023-8842</small></td>
+              <td>Subvención de I+D</td>
+              <td><span class="badge badge-review">Requiere Revisión</span></td>
+              <td><strong>64%</strong></td>
+              <td>Tecnología innovadora, pero cronograma de ROI inmediato cuestionable. Faltan estados financieros auditados del Q3.</td>
+            </tr>
+            <tr>
+              <td><strong>Global Trade Syndicate</strong><br><small style="color:var(--neutral-muted)">SOL-2023-8845</small></td>
+              <td>Subsidio de Exportación</td>
+              <td><span class="badge badge-rejected">Rechazada</span></td>
+              <td><strong>21%</strong></td>
+              <td>Entidad señalada en listas restringidas internacionales. Se recomienda rechazo automático.</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+    </main>
+  </div>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es-CR">
+<head>
+  <meta charset="UTF-8">
+  <title>Portal de Solicitante - Registro</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body style="display: block;">
+  <main class="main-content">
+    <div class="form-card">
+      <div class="header" style="text-align: center;">
+        <h1>Registro de Empresa</h1>
+        <p>Solicitud para Consideración de Inversión Institucional</p>
+      </div>
+
+      <div class="steps-nav">
+        <div class="step-item active">1. Datos de la Entidad</div>
+        <div class="step-item">2. Finanzas</div>
+        <div class="step-item">3. Documentación</div>
+      </div>
+
+      <form>
+        <div class="form-group">
+          <label>Nombre de la Empresa (Persona Jurídica)*</label>
+          <input type="text" class="form-control" placeholder="Ingrese el nombre legal completo de la empresa" required>
+        </div>
+
+        <div class="form-group">
+          <label>Sector Industrial*</label>
+          <select class="form-control" required>
+            <option value="">Seleccione el sector principal...</option>
+            <option>Tecnología y Software</option>
+            <option>Manufactura Avanzada</option>
+            <option>Energía Renovable</option>
+            <option>Salud y Biotecnología</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>Empleos Proyectados (3 Años)*</label>
+          <input type="number" class="form-control" placeholder="Cantidad estimada de personal" required>
+        </div>
+
+        <div class="form-group">
+          <label>Inversión de Capital Proyectada (₡ Colones)*</label>
+          <input type="number" class="form-control" placeholder="0.00" required>
+        </div>
+
+        <div class="form-group">
+          <label>Documentación de Apoyo (Opcional)</label>
+          <div class="dropzone">
+            <strong>Arrastre y suelte archivos aquí</strong>
+            <p>o haga clic para buscar en su computadora (PDF, DOCX, XLSX)</p>
+          </div>
+        </div>
+
+        <div class="form-actions">
+          <button type="button" class="btn btn-secondary">Guardar Borrador</button>
+          <button type="submit" class="btn btn-primary">Continuar a Finanzas &rarr;</button>
+        </div>
+      </form>
+    </div>
+  </main>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es-CR">
+<head>
+  <meta charset="UTF-8">
+  <title>Panel de Cumplimiento</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <div class="app-container">
+    <aside class="sidebar">
+      <div class="sidebar-brand">Autoridad de Inversión</div>
+      <a href="panelDeAnalista.html" class="nav-link">Centro del Analista</a>
+      <a href="#" class="nav-link active">Cumplimiento</a>
+      <a href="dashboard.html" class="nav-link">Panel General</a>
+      <a href="#" class="nav-link">Registro de Auditoría</a>
+    </aside>
+
+    <main class="main-content">
+      <header class="header">
+        <h1>Revisión de Cumplimiento</h1>
+        <p>Monitoree entidades señaladas, excepciones de políticas y tareas de verificación pendientes.</p>
+      </header>
+
+      <section class="metrics-grid">
+        <div class="metric-card">
+          <h3>Casos en Revisión</h3>
+          <div class="metric-value">27</div>
+          <span class="metric-sub warning">8 de alta prioridad</span>
+        </div>
+        <div class="metric-card">
+          <h3>Validados Hoy</h3>
+          <div class="metric-value">61</div>
+          <span class="metric-sub up">+14 vs ayer</span>
+        </div>
+        <div class="metric-card">
+          <h3>Coincidencias con Políticas</h3>
+          <div class="metric-value">98.6%</div>
+          <span class="metric-sub up">Conjunto de reglas estable</span>
+        </div>
+      </section>
+
+      <section class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>ID de Solicitud</th>
+              <th>Entidad</th>
+              <th>Nivel de Riesgo</th>
+              <th>Estado</th>
+              <th>Notas</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>SOL-2023-8842</td>
+              <td><strong>Quantum Energy Solutions</strong></td>
+              <td><span class="badge badge-warning">Medio</span></td>
+              <td>Documentos pendientes</td>
+              <td>Esperando estados financieros auditados del Q3 antes de recomendación final.</td>
+            </tr>
+            <tr>
+              <td>SOL-2023-8845</td>
+              <td><strong>Global Trade Syndicate</strong></td>
+              <td><span class="badge badge-danger">Alto</span></td>
+              <td>Escalarada</td>
+              <td>Entidad coincide con lista restringida y requiere revisión de supervisión.</td>
+            </tr>
+            <tr>
+              <td>SOL-2023-8849</td>
+              <td><strong>Northstar Medical Devices</strong></td>
+              <td><span class="badge badge-success">Bajo</span></td>
+              <td>Aprobada</td>
+              <td>Verificaciones de identidad, impuestos y propiedad completadas exitosamente.</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+    </main>
+  </div>
+</body>
+</html>
