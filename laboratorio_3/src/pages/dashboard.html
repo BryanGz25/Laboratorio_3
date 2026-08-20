@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es-CR">
+<head>
+  <meta charset="UTF-8">
+  <title>Panel Administrativo y Auditoría</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <div class="app-container">
+    <aside class="sidebar">
+      <div class="sidebar-brand">Autoridad de Inversión</div>
+      <a href="panelDeAnalista.html" class="nav-link">Centro del Analista</a>
+      <a href="cumplimiento.html" class="nav-link">Cumplimiento</a>
+      <a href="#" class="nav-link active">Panel General</a>
+      <a href="#" class="nav-link">Registro de Auditoría</a>
+    </aside>
+
+    <main class="main-content">
+      <header class="header">
+        <h1>Panel Administrativo</h1>
+        <p>Resumen del estado del sistema, métricas de procesamiento y acciones administrativas recientes.</p>
+      </header>
+
+      <section class="metrics-grid">
+        <div class="metric-card">
+          <h3>Tasa de Aprobación</h3>
+          <div class="metric-value">94.2%</div>
+          <span class="metric-sub up">&uarr; +1.2% (Últimos 30 Días)</span>
+        </div>
+        <div class="metric-card">
+          <h3>Total de Solicitudes Procesadas</h3>
+          <div class="metric-value">12,450</div>
+          <span class="metric-sub">En todos los sectores</span>
+        </div>
+        <div class="metric-card">
+          <h3>Tiempo Promedio de Respuesta</h3>
+          <div class="metric-value">1.4h</div>
+          <span class="metric-sub up">&darr; -0.3h de mejora</span>
+        </div>
+      </section>
+
+      <div class="ai-banner" style="background: #FEF2F2; border-color: #FECACA;">
+        <h2 style="color: #991B1B;">Anomalía Detectada en el Flujo de Aprobación</h2>
+        <p style="color: #B91C1C;">El sistema identificó un aumento del 15% en solicitudes rechazadas entre las 02:00 y las 04:00 UTC. Revise el 'Conjunto de Reglas de Cumplimiento v3.2' para posibles configuraciones incorrectas.</p>
+      </div>
+
+      <section class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Marcación de Tiempo</th>
+              <th>Usuario</th>
+              <th>Acción</th>
+              <th>Estado</th>
+              <th>Justificación / Detalles</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>2023-10-27 14:32:01 UTC</td>
+              <td><strong>J. Doe</strong> (Admin)</td>
+              <td>Sobrescribir Verificación de Cumplimiento</td>
+              <td><span class="badge badge-warning">Revisión Necesaria</span></td>
+              <td>Sobrescritura manual solicitada debido a falso positivo en evaluación de riesgo.</td>
+            </tr>
+            <tr>
+              <td>2023-10-27 13:15:44 UTC</td>
+              <td><strong>Proceso del Sistema</strong></td>
+              <td>Ejecución de Aprobación por Lote</td>
+              <td><span class="badge badge-success">Éxito</span></td>
+              <td>Se procesaron 452 solicitudes estándar de bajo riesgo mediante flujo automatizado.</td>
+            </tr>
+            <tr>
+              <td>2023-10-27 09:45:00 UTC</td>
+              <td><strong>J. Doe</strong> (Admin)</td>
+              <td>Rechazar Solicitud SOL-892</td>
+              <td><span class="badge badge-danger">Rechazada</span></td>
+              <td>Documentación insuficiente proporcionada para verificación de identidad.</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+    </main>
+  </div>
+</body>
+</html>
