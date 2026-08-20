@@ -18,10 +18,10 @@
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Inter', system-ui, sans-serif; }
-body { background-color: var(--bg-light); color: var(--text-main); display: flex; min-height: 100vh; }
+body { background-color: var(--bg-light); color: var(--text-main); min-height: 100vh; }
 
 /* ===== LAYOUT APP (Dashboard / Panel) ===== */
-.app-container { display: flex; width: 100%; }
+.app-container { display: flex; width: 100%; min-height: 100vh; }
 .sidebar { width: 260px; background: var(--surface); border-right: 1px solid var(--border); padding: 1.5rem; display: flex; flex-direction: column; gap: 0.5rem; }
 .sidebar-brand { font-size: 1.1rem; font-weight: 700; color: var(--secondary); margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.5rem; }
 .nav-link { display: flex; align-items: center; gap: 0.75rem; padding: 0.75rem 1rem; color: var(--neutral-muted); text-decoration: none; border-radius: var(--radius); font-weight: 500; font-size: 0.9rem; }
