@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="es-CR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PROCOMER | Nueva solicitud</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+  <!-- ============ PORTAL DE SOLICITUD ============ -->
+  <header class="topbar">
+    <a class="brand" href="../../index.html">
+      <span class="logo-mark">
+        <svg class="icon-svg" viewBox="0 0 24 24"><path d="M6 21c0-9 5-14 14-14 0 9-5 14-14 14z"/><path d="M6 21C9 15 13 11 18 8"/></svg>
+      </span>
+      PRO<b>COMER</b>
+    </a>
+    <nav>
+      <a href="dashboardEmpresa.html">Mi dashboard</a>
+      <a href="consulta.html">Seguimiento</a>
+      <a href="../../index.html">Inicio</a>
+    </nav>
+    <a class="login-link" href="login.html">Cambiar perfil</a>
+  </header>
+
+  <main class="page">
+    <p class="eyebrow">PERFIL: EMPRESA</p>
+    <h1>Nueva solicitud de instalación</h1>
+    <p class="lead">Adjunte hasta 5 documentos PDF de máximo 10 MB cada uno. El sistema evaluará automáticamente el cumplimiento.</p>
+
+    <section class="form-card">
+      <form id="requestForm">
+        <div class="form-grid">
+          <label>Nombre legal de la empresa *<input name="company" required></label>
+          <label>Correo de contacto *<input name="email" type="email" required></label>
+          <label>Zona franca *<select name="zone" id="zoneSelect"></select></label>
+          <label>Sector industrial *
+            <select name="sector" required>
+              <option value="">Seleccione…</option>
+            </select>
+          </label>
+          <label>Empleos proyectados *<input name="jobs" type="number" min="1" required></label>
+          <label>Inversión proyectada (USD) *<input name="investment" type="number" min="1" required></label>
+        </div>
+
+        <label class="upload">Documentos PDF *
+          <input type="file" id="files" accept="application/pdf" multiple required>
+          <small id="fileInfo">Máximo 5 archivos, 10 MB por archivo. Debe incluir los 4 documentos obligatorios.</small>
+        </label>
+
+        <div class="actions">
+          <button type="button" class="button secondary" id="draftBtn">Guardar borrador</button>
+          <button class="button primary">Enviar solicitud</button>
+        </div>
+        <div class="progress" id="progress"><i></i> Guardando solicitud…</div>
+      </form>
+    </section>
+  </main>
+
+  <!-- Asistente virtual -->
+  <button class="chat-toggle" id="chatToggle">?</button>
+  <aside class="chat" id="chat">
+    <div><b>Asistente PROCOMER</b><button id="closeChat">×</button></div>
+    <section id="messages">
+      <p>Hola. Puedo ayudarle con documentos, inversión, empleos y sectores permitidos.</p>
+    </section>
+    <form id="chatForm">
+      <input required placeholder="Escriba su consulta">
+      <button>Enviar</button>
+    </form>
+  </aside>
+
+  <div id="toast" class="toast"></div>
+  <script type="module" src="../js/solicitud.js"></script>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="es-CR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PROCOMER | Dashboard de empresa</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+  <!-- ============ DASHBOARD DE EMPRESA ============ -->
+  <header class="topbar">
+    <a class="brand" href="../../index.html">
+      <span class="logo-mark">
+        <svg class="icon-svg" viewBox="0 0 24 24"><path d="M6 21c0-9 5-14 14-14 0 9-5 14-14 14z"/><path d="M6 21C9 15 13 11 18 8"/></svg>
+      </span>
+      PRO<b>COMER</b>
+    </a>
+    <nav>
+      <a href="../../index.html">Inicio</a>
+      <a href="dashboardAdministrador.html">Administración</a>
+      <a href="dashboardAnalista.html">Analista</a>
+      <a href="consulta.html">Seguimiento</a>
+    </nav>
+    <a class="login-link" href="login.html">Cambiar perfil</a>
+  </header>
+
+  <main class="page">
+    <p class="eyebrow">PERFIL: EMPRESA</p>
+    <h1>Dashboard de empresa</h1>
+    <p class="lead">Inicie una solicitud de instalación, consulte sus expedientes y dé seguimiento al proceso de evaluación.</p>
+
+    <!-- Banner de borrador pendiente -->
+    <div id="draftBanner"></div>
+
+    <!-- Acciones rápidas -->
+    <div class="quick-grid">
+      <a class="quick-card tint-green" href="solicitud.html">
+        <svg class="icon-svg" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>
+        <b>Nueva solicitud</b><span>Iniciar un expediente de zona franca</span>
+      </a>
+      <a class="quick-card" href="consulta.html">
+        <svg class="icon-svg" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+        <b>Consultar código</b><span>Estado con el código ZF-2026-XXXX</span>
+      </a>
+      <a class="quick-card tint-violet" href="contacto.html">
+        <svg class="icon-svg" viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.9.3 1.9.6 2.9.7a2 2 0 0 1 1.7 2z"/></svg>
+        <b>Soporte PROCOMER</b><span>Teléfonos y correo de ayuda</span>
+      </a>
+      <button class="quick-card" id="exportMine">
+        <svg class="icon-svg tint-green" viewBox="0 0 24 24"><path d="M12 3v12M7 10l5 5 5-5"/><path d="M4 21h16"/></svg>
+        <b>Exportar mis solicitudes</b><span>Descargar CSV con mis expedientes</span>
+      </button>
+    </div>
+
+    <section class="metric-grid">
+      <article><small>Solicitudes enviadas</small><b id="statSent">0</b></article>
+      <article><small>En revisión</small><b id="statReview">0</b></article>
+      <article><small>Clasificadas</small><b id="statClassified">0</b></article>
+    </section>
+
+    <section class="table-card">
+      <h2>Mis solicitudes</h2>
+      <table>
+        <thead>
+          <tr><th>Código</th><th>Empresa</th><th>Fecha</th><th>Puntaje</th><th>Estado</th><th>Acción</th></tr>
+        </thead>
+        <tbody id="mineRows"></tbody>
+      </table>
+    </section>
+
+    <section class="detail-grid">
+      <div class="table-card" style="margin:0;">
+        <h2>Movimientos recientes</h2>
+        <ul class="timeline" id="timeline"></ul>
+      </div>
+      <div class="table-card" style="margin:0;">
+        <h2>Notificaciones</h2>
+        <ul class="notif-list" id="notifs"></ul>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer compacto del panel -->
+  <footer class="footer-slim">
+    <small>© <span class="year">2026</span> PROCOMER · Espacio empresarial</small>
+    <nav>
+      <a href="../../index.html">Inicio</a>
+      <a href="sobre-nosotros.html">Sobre nosotros</a>
+      <a href="contacto.html">Contáctenos</a>
+      <a href="../../index.html#proposito">Propósito</a>
+    </nav>
+  </footer>
+
+  <div id="toast" class="toast"></div>
+  <script type="module" src="../js/empresa.js"></script>
+</body>
+</html>

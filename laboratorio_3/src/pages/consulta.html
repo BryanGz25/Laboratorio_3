@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="es-CR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PROCOMER | Consulta de solicitud</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+  <!-- ============ CONSULTA PÚBLICA ============ -->
+  <header class="topbar">
+    <a class="brand" href="../../index.html">
+      <span class="logo-mark">
+        <svg class="icon-svg" viewBox="0 0 24 24"><path d="M6 21c0-9 5-14 14-14 0 9-5 14-14 14z"/><path d="M6 21C9 15 13 11 18 8"/></svg>
+      </span>
+      PRO<b>COMER</b>
+    </a>
+    <nav>
+      <a href="../../index.html">Inicio</a>
+      <a href="sobre-nosotros.html">Sobre nosotros</a>
+      <a href="contacto.html">Contáctenos</a>
+    </nav>
+    <a class="login-link" href="login.html">
+      <svg class="icon-svg" viewBox="0 0 24 24"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><path d="M10 17l5-5-5-5"/><path d="M15 12H3"/></svg>
+      Ingresar
+    </a>
+  </header>
+
+  <main class="page">
+    <p class="eyebrow">SEGUIMIENTO EN LÍNEA</p>
+    <h1>Consulta pública de solicitud</h1>
+    <p class="lead">Ingrese el código único de seguimiento para conocer el estado y el historial del expediente.</p>
+
+    <section class="form-card">
+      <form id="lookupForm">
+        <label>Código de solicitud
+          <input name="code" id="codeInput" required placeholder="Ej.: ZF-2026-8841">
+        </label>
+        <button class="button primary">Consultar estado
+          <svg class="icon-svg" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+        </button>
+      </form>
+
+      <!-- Códigos de ejemplo para probar -->
+      <div class="cred-chips">
+        <button type="button" class="cred-chip demo-code">ZF-2026-8841</button>
+        <button type="button" class="cred-chip demo-code">ZF-2026-8842</button>
+        <button type="button" class="cred-chip demo-code">ZF-2026-8845</button>
+      </div>
+
+      <div id="result"></div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-bottom">© PROCOMER · Promotora del Comercio Exterior de Costa Rica</div>
+  </footer>
+
+  <div id="toast" class="toast"></div>
+  <script type="module" src="../js/consulta.js"></script>
+</body>
+</html>

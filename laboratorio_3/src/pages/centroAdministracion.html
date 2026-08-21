@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="es-CR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PROCOMER | Centro de Administración</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+  <!-- ============ CENTRO DE ADMINISTRACIÓN ============ -->
+  <div class="app-container">
+
+    <!-- Barra lateral -->
+    <aside class="sidebar">
+      <a class="sidebar-brand" href="../../index.html">
+        <span class="logo-mark">
+          <svg class="icon-svg" viewBox="0 0 24 24"><path d="M6 21c0-9 5-14 14-14 0 9-5 14-14 14z"/><path d="M6 21C9 15 13 11 18 8"/></svg>
+        </span>
+        PRO<b>COMER</b>
+      </a>
+      <span class="role-tag">Perfil: Administrador</span>
+
+      <a class="nav-link" href="dashboardAdministrador.html">
+        <svg class="icon-svg" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="9" rx="1"/><rect x="14" y="3" width="7" height="5" rx="1"/><rect x="14" y="12" width="7" height="9" rx="1"/><rect x="3" y="16" width="7" height="5" rx="1"/></svg>
+        Panel principal
+      </a>
+      <a class="nav-link active" href="centroAdministracion.html">
+        <svg class="icon-svg" viewBox="0 0 24 24"><path d="M12 2l8 4.5v9L12 20l-8-4.5v-9L12 2z"/><path d="M12 11l8-4.5M12 11v9M12 11L4 6.5"/></svg>
+        Centro de Administración
+      </a>
+      <a class="nav-link" href="zonasFrancas.html">
+        <svg class="icon-svg" viewBox="0 0 24 24"><path d="M3 21h18M5 21V8l7-5 7 5v13"/><path d="M9 21v-6h6v6"/></svg>
+        Zonas francas
+      </a>
+      <a class="nav-link" href="cumplimiento.html">
+        <svg class="icon-svg" viewBox="0 0 24 24"><path d="M9 11l3 3 8-8"/><path d="M20 12v7a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h9"/></svg>
+        Cumplimiento y alertas
+      </a>
+
+      <div class="sidebar-exit">
+        <a class="nav-link" href="login.html">
+          <svg class="icon-svg" viewBox="0 0 24 24"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><path d="M16 17l5-5-5-5"/><path d="M21 12H9"/></svg>
+          Cerrar sesión
+        </a>
+      </div>
+    </aside>
+
+    <!-- Contenido -->
+    <main class="main-content">
+      <header class="header-panel">
+        <h1>Centro de Administración</h1>
+        <p>Consulte la información gestionada por el analista y emita la decisión final sobre cada clasificación.</p>
+      </header>
+
+      <!-- Información del analista -->
+      <section class="table-card">
+        <div class="table-head"><h2>Información del analista</h2></div>
+        <div class="kpi-row" id="analystInfo" style="margin-bottom:0;"></div>
+      </section>
+
+      <!-- Panel de clasificación para aprobar / rechazar -->
+      <section class="table-card">
+        <div class="table-head">
+          <h2>Panel de clasificación · Decisión final</h2>
+          <p style="color:#5a7089;font-size:.86rem;">Haga clic en una fila para ver el detalle completo del tiquet.</p>
+        </div>
+
+        <!-- Pestañas por decisión -->
+        <div class="filter-tabs" id="decisionTabs">
+          <button class="chip-filter active" data-tab="todas">Todas</button>
+          <button class="chip-filter" data-tab="pendientes">Por decidir</button>
+          <button class="chip-filter" data-tab="aprobadas">Aprobadas</button>
+          <button class="chip-filter" data-tab="rechazadas">Rechazadas</button>
+        </div>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Código</th>
+              <th>Empresa</th>
+              <th>Puntaje</th>
+              <th>Clasificación IA</th>
+              <th>Gestión del analista</th>
+              <th>Estado</th>
+              <th>Decisión final</th>
+            </tr>
+          </thead>
+          <tbody id="classRows"></tbody>
+        </table>
+      </section>
+    </main>
+  </div>
+
+  <!-- Footer compacto del panel -->
+  <footer class="footer-slim">
+    <small>© <span class="year">2026</span> PROCOMER · Centro de Administración</small>
+    <nav>
+      <a href="../../index.html">Inicio</a>
+      <a href="dashboardAdministrador.html">Panel principal</a>
+      <a href="sobre-nosotros.html">Sobre nosotros</a>
+      <a href="contacto.html">Contáctenos</a>
+    </nav>
+  </footer>
+
+  <div id="toast" class="toast"></div>
+  <script type="module" src="../js/centroAdmin.js"></script>
+</body>
+</html>
