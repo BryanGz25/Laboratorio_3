@@ -2,65 +2,82 @@
 <html lang="es-CR">
 <head>
   <meta charset="UTF-8">
-  <title>Portal de Solicitante - Registro</title>
+  <title>ProComer - Inicio de Sesión</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="solicitud.css">
 </head>
 <body>
+  <a href="../../index.html" class="back-link">&larr; Volver al Inicio</a>
   <main class="main-content">
-    <div class="form-card">
+    <div class="form-card login-card">
       <div class="header" style="text-align: center;">
-        <h1>Registro de Empresa</h1>
-        <p>Solicitud para Consideración de Inversión Institucional</p>
+        <div class="login-logo">
+          <div class="logo-icon">PC</div>
+        </div>
+        <h1>ProComer</h1>
+        <p>Inicie sesión para acceder al sistema</p>
       </div>
 
-      <div class="steps-nav">
-        <div class="step-item active">1. Datos de la Entidad</div>
-        <div class="step-item">2. Finanzas</div>
-        <div class="step-item">3. Documentación</div>
-      </div>
-
-      <form>
+      <form id="loginForm">
         <div class="form-group">
-          <label>Nombre de la Empresa (Persona Jurídica)*</label>
-          <input type="text" class="form-control" placeholder="Ingrese el nombre legal completo de la empresa" required>
+          <label>Correo Electrónico</label>
+          <input type="email" id="email" class="form-control" placeholder="usuario@procomer.go.cr" required>
         </div>
 
         <div class="form-group">
-          <label>Sector Industrial*</label>
-          <select class="form-control" required>
-            <option value="">Seleccione el sector principal...</option>
-            <option>Tecnología y Software</option>
-            <option>Manufactura Avanzada</option>
-            <option>Energía Renovable</option>
-            <option>Salud y Biotecnología</option>
-          </select>
+          <label>Contraseña</label>
+          <input type="password" id="password" class="form-control" placeholder="Ingrese su contraseña" required>
         </div>
 
-        <div class="form-group">
-          <label>Empleos Proyectados (3 Años)*</label>
-          <input type="number" class="form-control" placeholder="Cantidad estimada de personal" required>
-        </div>
+        <div id="errorMsg" class="error-msg" style="display: none;"></div>
 
-        <div class="form-group">
-          <label>Inversión de Capital Proyectada (₡ Colones)*</label>
-          <input type="number" class="form-control" placeholder="0.00" required>
-        </div>
-
-        <div class="form-group">
-          <label>Documentación de Apoyo (Opcional)</label>
-          <div class="dropzone">
-            <strong>Arrastre y suelte archivos aquí</strong>
-            <p>o haga clic para buscar en su computadora (PDF, DOCX, XLSX)</p>
-          </div>
-        </div>
-
-        <div class="form-actions">
-          <button type="button" class="btn btn-secondary">Guardar Borrador</button>
-          <button type="submit" class="btn btn-primary">Continuar a Finanzas &rarr;</button>
+        <div class="form-actions" style="justify-content: center;">
+          <button type="submit" class="btn btn-primary btn-login-submit">Iniciar Sesión</button>
         </div>
       </form>
+
+      <div class="profiles-info">
+        <p class="profiles-title">Perfiles disponibles:</p>
+        <div class="profile-list">
+          <div class="profile-item">
+            <span class="profile-role admin">Administrador</span>
+            <span class="profile-cred">admin@procomer.go.cr / admin123</span>
+          </div>
+          <div class="profile-item">
+            <span class="profile-role gerente">Gerente</span>
+            <span class="profile-cred">gerente@procomer.go.cr / gerente123</span>
+          </div>
+          <div class="profile-item">
+            <span class="profile-role usuario">Usuario</span>
+            <span class="profile-cred">usuario@procomer.go.cr / usuario123</span>
+          </div>
+        </div>
+      </div>
     </div>
   </main>
+
+  <script>
+    const users = {
+      'admin@procomer.go.cr': { password: 'admin123', role: 'admin', redirect: 'dashboard.html' },
+      'gerente@procomer.go.cr': { password: 'gerente123', role: 'gerente', redirect: 'panelDeAnalista.html' },
+      'usuario@procomer.go.cr': { password: 'usuario123', role: 'usuario', redirect: 'cumplimiento.html' }
+    };
+
+    document.getElementById('loginForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const email = document.getElementById('email').value.trim();
+      const password = document.getElementById('password').value;
+      const errorMsg = document.getElementById('errorMsg');
+
+      const user = users[email];
+      if (user && user.password === password) {
+        errorMsg.style.display = 'none';
+        window.location.href = user.redirect;
+      } else {
+        errorMsg.textContent = 'Correo o contraseña incorrectos.';
+        errorMsg.style.display = 'block';
+      }
+    });
+  </script>
 </body>
 </html>
