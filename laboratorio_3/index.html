@@ -1,1 +1,221 @@
-<!doctype html><html lang="es-CR"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>ZoFranca CR | PROCOMER</title></head><body><div id="app"></div><script type="module" src="src/main.js"></script></body></html>
+<!doctype html>
+<html lang="es-CR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PROCOMER | Inicio</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/src/style.css">
+</head>
+<body>
+
+  <!-- ============ ENCABEZADO ============ -->
+  <header class="topbar transparent">
+    <a class="brand" href="index.html" aria-label="PROCOMER inicio">
+      <span class="logo-mark">
+        <svg class="icon-svg" viewBox="0 0 24 24"><path d="M6 21c0-9 5-14 14-14 0 9-5 14-14 14z"/><path d="M6 21C9 15 13 11 18 8"/></svg>
+      </span>
+      PRO<b>COMER</b>
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-label="Abrir menú">
+      <svg class="icon-svg" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+    <nav id="mainNav">
+      <a href="#proposito">Propósito</a>
+      <a href="src/pages/sobre-nosotros.html">Sobre nosotros</a>
+      <a href="src/pages/contacto.html">Contáctenos</a>
+      <a href="src/pages/consulta.html">Seguimiento</a>
+    </nav>
+    <a class="login-link" href="src/pages/login.html">
+      <svg class="icon-svg" viewBox="0 0 24 24"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><path d="M10 17l5-5-5-5"/><path d="M15 12H3"/></svg>
+      Ingresar
+    </a>
+  </header>
+
+  <!-- ============ HÉROE CON VIDEO DE FONDO (autoplay · bucle) ============ -->
+  <section class="video-hero">
+    <video class="bg-video" autoplay muted loop playsinline preload="auto"
+           poster="src/assets/hero.png">
+      <source src="https://videos.pexels.com/video-files/3571264/3571264-uhd_2560_1440_30fps.mp4" type="video/mp4">
+      <source src="https://videos.pexels.com/video-files/2098989/2098989-hd_1920_1080_30fps.mp4" type="video/mp4">
+    </video>
+    <div class="hero-content">
+      <p class="eyebrow">INVERSIÓN QUE TRANSFORMA · COSTA RICA</p>
+      <h1>El futuro de la inversión empieza en <strong>Costa Rica.</strong></h1>
+      <p>PROCOMER impulsa el régimen de Zona Franca con una plataforma ágil, segura y trazable para gestionar solicitudes de instalación de empresas.</p>
+      <div class="actions">
+        <a class="button primary" href="src/pages/login.html">Iniciar sesión
+          <svg class="icon-svg" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <a class="button outline-light" href="src/pages/sobre-nosotros.html">Conozca PROCOMER</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ VIDEO INSTITUCIONAL (reproducción automática) ============ -->
+  <section class="section video-section" data-reveal>
+    <video autoplay muted loop playsinline preload="metadata"
+           poster="images/slide1.svg">
+      <source src="https://videos.pexels.com/video-files/2098989/2098989-hd_1920_1080_30fps.mp4" type="video/mp4">
+      <source src="https://videos.pexels.com/video-files/3571264/3571264-uhd_2560_1440_30fps.mp4" type="video/mp4">
+      Su navegador no admite video.
+    </video>
+    <div>
+      <p class="eyebrow">COSTA RICA ABIERTA AL MUNDO</p>
+      <h2>Conozca nuestro propósito</h2>
+      <p>Este video presenta la misión, visión y valores que guían el acompañamiento de PROCOMER a cada empresa que decide invertir en el país.</p>
+      <div class="video-badges">
+        <span class="chip">
+          <svg class="icon-svg" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> Gestión ágil
+        </span>
+        <span class="chip">
+          <svg class="icon-svg" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> Procesos seguros
+        </span>
+        <span class="chip">
+          <svg class="icon-svg" viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="M7 14l4-4 3 3 5-6"/></svg> Decisiones trazables
+        </span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CARRUSEL CONTINUO DE IMÁGENES (izquierda → derecha, bucle infinito) ============ -->
+  <section class="marquee-band" aria-label="Galería de imágenes en movimiento">
+    <div class="section-title" style="max-width:1180px;margin:0 auto 2rem;padding:0 5vw;">
+      <div>
+        <p class="eyebrow">COSTA RICA EN MOVIMIENTO</p>
+        <h2>Un país vivo que impulsa su inversión</h2>
+      </div>
+    </div>
+    <div class="marquee">
+      <div class="marquee-track">
+        <figure class="marquee-item"><img src="images/slide1.svg" alt="Naturaleza costarricense"><figcaption>Biodiversidad que inspira</figcaption></figure>
+        <figure class="marquee-item"><img src="images/slide2.svg" alt="Innovación e industria"><figcaption>Industria con propósito</figcaption></figure>
+        <figure class="marquee-item"><img src="images/slide3.svg" alt="Comercio exterior"><figcaption>Puente entre continentes</figcaption></figure>
+        <figure class="marquee-item"><img src="images/slide4.svg" alt="Talento humano"><figcaption>Talento que transforma</figcaption></figure>
+        <!-- Duplicado para el bucle continuo -->
+        <figure class="marquee-item" aria-hidden="true"><img src="images/slide1.svg" alt=""><figcaption>Biodiversidad que inspira</figcaption></figure>
+        <figure class="marquee-item" aria-hidden="true"><img src="images/slide2.svg" alt=""><figcaption>Industria con propósito</figcaption></figure>
+        <figure class="marquee-item" aria-hidden="true"><img src="images/slide3.svg" alt=""><figcaption>Puente entre continentes</figcaption></figure>
+        <figure class="marquee-item" aria-hidden="true"><img src="images/slide4.svg" alt=""><figcaption>Talento que transforma</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SECTORES ESTRATÉGICOS: 4 CAJAS EN TODA LA PANTALLA ============ -->
+  <section class="sectors-band">
+    <div class="sectors-head">
+      <p class="eyebrow">SECTORES ESTRATÉGICOS</p>
+      <h2 style="font-size:clamp(1.6rem,3vw,2.4rem);color:#123a5c;">Ideas que se mueven con el país</h2>
+    </div>
+    <div class="sector-grid">
+      <article class="s-blue">
+        <small class="num">01</small>
+        <svg class="icon-svg" viewBox="0 0 24 24"><path d="M2 20h20"/><path d="M4 20V9l5 3V9l5 3V4h6v16"/></svg>
+        <h3>Ciencias de la vida</h3>
+        <p>Innovación que mejora vidas: investigación, dispositivos médicos y farmacéutica de clase mundial.</p>
+      </article>
+      <article class="s-coral">
+        <small class="num">02</small>
+        <svg class="icon-svg" viewBox="0 0 24 24"><path d="M12 2v4M12 18v4M4.9 4.9l2.8 2.8M16.3 16.3l2.8 2.8M2 12h4M18 12h4M4.9 19.1l2.8-2.8M16.3 7.7l2.8-2.8"/></svg>
+        <h3>Manufactura avanzada</h3>
+        <p>Precisión y calidad para llegar más lejos: componentes, automatización y procesos limpios.</p>
+      </article>
+      <article class="s-green">
+        <small class="num">03</small>
+        <svg class="icon-svg" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg>
+        <h3>Servicios globales</h3>
+        <p>Talento conectado al mundo: servicios compartidos, ingeniería y soporte multinacional.</p>
+      </article>
+      <article class="s-violet">
+        <small class="num">04</small>
+        <svg class="icon-svg" viewBox="0 0 24 24"><rect x="6" y="6" width="12" height="12" rx="2"/><path d="M9 1v3M15 1v3M9 20v3M15 20v3M1 9h3M1 15h3M20 9h3M20 15h3"/></svg>
+        <h3>Tecnologías de la información</h3>
+        <p>Soluciones con propósito: desarrollo de software, ciberseguridad y nube desde Costa Rica.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- ============ PROPÓSITO ============ -->
+  <section id="proposito" class="section">
+    <div class="section-title">
+      <div>
+        <p class="eyebrow">NUESTRO PROPÓSITO</p>
+        <h2>Lo que nos mueve cada día</h2>
+      </div>
+    </div>
+    <div class="purpose" data-reveal>
+      <article>
+        <svg class="icon-svg" viewBox="0 0 24 24"><path d="M12 21C7 17 4 13.6 4 9.8 4 6.6 6.6 4 9.8 4c1.4 0 2.2.6 2.2.6S12.8 4 14.2 4C17.4 4 20 6.6 20 9.8c0 3.8-3 7.2-8 11.2z"/></svg>
+        <h3>Misión</h3>
+        <p>Impulsar el comercio exterior y la inversión mediante servicios ágiles, confiables y con criterio humano.</p>
+      </article>
+      <article>
+        <svg class="icon-svg" viewBox="0 0 24 24"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg>
+        <h3>Visión</h3>
+        <p>Posicionar a Costa Rica como el mejor lugar para invertir, prosperar y generar desarrollo sostenible.</p>
+      </article>
+      <article>
+        <svg class="icon-svg" viewBox="0 0 24 24"><path d="M12 2l2.9 6.3L21 9.3l-4.5 4.4L17.8 20 12 16.7 6.2 20l1.3-6.3L3 9.3l6.1-1z"/></svg>
+        <h3>Valores</h3>
+        <p>Integridad, innovación, excelencia, sostenibilidad y vocación de servicio en cada gestión.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER CON BOTONES ============ -->
+  <footer class="site-footer">
+    <div class="footer-main">
+      <div class="footer-col">
+        <a class="brand" href="index.html">
+          <span class="logo-mark">
+            <svg class="icon-svg" viewBox="0 0 24 24"><path d="M6 21c0-9 5-14 14-14 0 9-5 14-14 14z"/><path d="M6 21C9 15 13 11 18 8"/></svg>
+          </span>
+          PRO<b>COMER</b>
+        </a>
+        <p class="footer-desc">Promotora del Comercio Exterior de Costa Rica. Gestión integral del régimen de Zona Franca e inversión.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Enlaces rápidos</h4>
+        <ul>
+          <li><a href="src/pages/sobre-nosotros.html">Sobre nosotros</a></li>
+          <li><a href="src/pages/contacto.html">Contáctenos</a></li>
+          <li><a href="src/pages/consulta.html">Consulta de solicitud</a></li>
+          <li><a href="src/pages/login.html">Acceso a plataformas</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contacto</h4>
+        <ul class="footer-contact">
+          <li>
+            <svg class="icon-svg" viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.9.3 1.9.6 2.9.7a2 2 0 0 1 1.7 2z"/></svg>
+            <span>+506 2500-8000</span>
+          </li>
+          <li>
+            <svg class="icon-svg" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 7l-10 6L2 7"/></svg>
+            <span>info@procomer.com</span>
+          </li>
+          <li>
+            <svg class="icon-svg" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            <span>San José, Costa Rica</span>
+          </li>
+        </ul>
+      </div>
+      <div class="footer-col footer-btns">
+        <h4>Explore más</h4>
+        <a class="button primary" href="src/pages/sobre-nosotros.html">
+          Sobre nosotros
+          <svg class="icon-svg" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <a class="button outline-light" href="src/pages/contacto.html">
+          Contáctenos
+          <svg class="icon-svg" viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.9.3 1.9.6 2.9.7a2 2 0 0 1 1.7 2z"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="footer-bottom">© <span id="year">2026</span> PROCOMER · Promotora del Comercio Exterior de Costa Rica · Todos los derechos reservados</div>
+  </footer>
+
+  <script type="module" src="/src/js/ui.js"></script>
+  <script type="module" src="/src/js/home.js"></script>
+</body>
+</html>

@@ -1,1 +1,66 @@
-<!doctype html><html lang="es-CR"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>ZoFranca CR | Cumplimiento</title></head><body><div id="app"></div><script type="module" src="../main.js"></script></body></html>
+<!doctype html>
+<html lang="es-CR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PROCOMER | Cumplimiento y alertas</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+  <!-- ============ CUMPLIMIENTO Y ALERTAS ============ -->
+  <header class="topbar">
+    <a class="brand" href="../../index.html">
+      <span class="logo-mark">
+        <svg class="icon-svg" viewBox="0 0 24 24"><path d="M6 21c0-9 5-14 14-14 0 9-5 14-14 14z"/><path d="M6 21C9 15 13 11 18 8"/></svg>
+      </span>
+      PRO<b>COMER</b>
+    </a>
+    <nav>
+      <a href="../../index.html">Inicio</a>
+      <a href="dashboardAdministrador.html">Administración</a>
+      <a href="centroAdministracion.html">Centro de Administración</a>
+      <a href="zonasFrancas.html">Zonas francas</a>
+    </nav>
+    <a class="login-link" href="login.html">Cambiar perfil</a>
+  </header>
+
+  <main class="page">
+    <p class="eyebrow">PERFIL: ADMINISTRADOR</p>
+    <h1>Cumplimiento y alertas</h1>
+    <p class="lead">Monitoree el índice general de cumplimiento y las anomalías activas del sistema.</p>
+
+    <section class="metric-grid" id="metrics"></section>
+
+    <section class="anomaly-card">
+      <header>
+        <svg class="icon-svg" viewBox="0 0 24 24"><path d="M10.3 3.9L1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/><path d="M12 9v4M12 17h.01"/></svg>
+        <h2>Alertas activas</h2>
+        <button class="button secondary small" id="exportAlerts" style="margin-left:auto;">Exportar alertas CSV</button>
+      </header>
+      <div id="alerts"></div>
+    </section>
+
+    <section class="table-card">
+      <h2>Solicitudes validadas</h2>
+      <table>
+        <thead><tr><th>ID</th><th>Empresa</th><th>Clasificación IA</th><th>Clasificación final</th></tr></thead>
+        <tbody id="validatedRows"></tbody>
+      </table>
+    </section>
+  </main>
+
+  <!-- Footer compacto del panel -->
+  <footer class="footer-slim">
+    <small>© <span class="year">2026</span> PROCOMER · Cumplimiento normativo</small>
+    <nav>
+      <a href="../../index.html">Inicio</a>
+      <a href="dashboardAdministrador.html">Panel principal</a>
+      <a href="centroAdministracion.html">Centro de Administración</a>
+      <a href="zonasFrancas.html">Zonas francas</a>
+    </nav>
+  </footer>
+
+  <script type="module" src="../js/cumplimiento.js"></script>
+</body>
+</html>

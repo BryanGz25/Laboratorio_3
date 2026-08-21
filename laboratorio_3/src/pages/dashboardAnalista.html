@@ -1,1 +1,86 @@
-<!doctype html><html lang="es-CR"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>ZoFranca CR | Analista</title></head><body><div id="app"></div><script type="module" src="../main.js"></script></body></html>
+<!doctype html>
+<html lang="es-CR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PROCOMER | Dashboard del analista</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+  <!-- ============ DASHBOARD DEL ANALISTA ============ -->
+  <header class="topbar">
+    <a class="brand" href="../../index.html">
+      <span class="logo-mark">
+        <svg class="icon-svg" viewBox="0 0 24 24"><path d="M6 21c0-9 5-14 14-14 0 9-5 14-14 14z"/><path d="M6 21C9 15 13 11 18 8"/></svg>
+      </span>
+      PRO<b>COMER</b>
+    </a>
+    <nav>
+      <a href="../../index.html">Inicio</a>
+      <a href="dashboardEmpresa.html">Empresa</a>
+      <a href="dashboardAdministrador.html">Administración</a>
+      <a href="consulta.html">Seguimiento</a>
+    </nav>
+    <a class="login-link" href="login.html">Cambiar perfil</a>
+  </header>
+
+  <main class="page">
+    <p class="eyebrow">PERFIL: ANALISTA</p>
+    <h1>Dashboard del analista</h1>
+    <p class="lead">Revise las solicitudes recibidas y valide la recomendación generada por la inteligencia artificial.</p>
+
+    <section class="metric-grid">
+      <article><small>Pendientes</small><b id="statPending">0</b></article>
+      <article><small>Recomendadas por IA</small><b id="statOk">0</b></article>
+      <article><small>Para revisar</small><b id="statReview">0</b></article>
+    </section>
+
+    <div class="quick-grid">
+      <button class="quick-card" id="csvBtn">
+        <svg class="icon-svg" viewBox="0 0 24 24"><path d="M12 3v12M7 10l5 5 5-5"/><path d="M4 21h16"/></svg>
+        <b>Exportar CSV</b><span>Listado completo para análisis</span>
+      </button>
+      <a class="quick-card tint-green" href="consulta.html">
+        <svg class="icon-svg" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+        <b>Consulta pública</b><span>Ver seguimiento como ciudadanía</span>
+      </a>
+    </div>
+
+    <section class="table-card">
+      <div class="table-head">
+        <h2>Solicitudes recibidas</h2>
+        <input class="search" id="searchInput" placeholder="Buscar por empresa o código…" style="max-width:280px;">
+      </div>
+
+      <!-- Filtros por estado -->
+      <div class="filter-tabs" id="filterTabs">
+        <button class="chip-filter active" data-filter="todas">Todas</button>
+        <button class="chip-filter" data-filter="Pendiente">Pendientes</button>
+        <button class="chip-filter" data-filter="En revisión">En revisión</button>
+        <button class="chip-filter" data-filter="clasificadas">Clasificadas</button>
+      </div>
+
+      <table>
+        <thead>
+          <tr><th>ID</th><th>Empresa</th><th>Fecha</th><th>Estado</th><th>Clasificación IA</th><th>Acciones rápidas</th></tr>
+        </thead>
+        <tbody id="rows"></tbody>
+      </table>
+    </section>
+  </main>
+
+  <!-- Footer compacto del panel -->
+  <footer class="footer-slim">
+    <small>© <span class="year">2026</span> PROCOMER · Mesa de análisis</small>
+    <nav>
+      <a href="../../index.html">Inicio</a>
+      <a href="sobre-nosotros.html">Sobre nosotros</a>
+      <a href="contacto.html">Contáctenos</a>
+    </nav>
+  </footer>
+
+  <div id="toast" class="toast"></div>
+  <script type="module" src="../js/analista.js"></script>
+</body>
+</html>
