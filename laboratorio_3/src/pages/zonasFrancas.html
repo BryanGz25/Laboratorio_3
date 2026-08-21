@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="es-CR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PROCOMER | Zonas francas y criterios</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+  <!-- ============ ADMINISTRACIÓN DE ZONAS FRANCAS ============ -->
+  <header class="topbar">
+    <a class="brand" href="../../index.html">
+      <span class="logo-mark"><svg class="icon-svg" viewBox="0 0 24 24"><circle cx="11" cy="13" r="7"/><path d="M4 13h14"/><path d="M11 6c2.2 2 3.3 4.4 3.3 7s-1.1 5-3.3 7c-2.2-2-3.3-4.4-3.3-7s1.1-5 3.3-7z"/><path d="M16.8 10.8c-.2-3.6 1.9-5.8 5.2-5.6.2 3.6-1.9 5.8-5.2 5.6z" fill="currentColor" stroke="none"/></svg></span>
+      PROCOMER
+    </a>
+    <nav>
+      <a href="../../index.html">Inicio</a>
+      <a href="dashboardAdministrador.html">Administración</a>
+      <a href="centroAdministracion.html">Centro de Administración</a>
+      <a href="cumplimiento.html">Cumplimiento</a>
+    </nav>
+    <a class="login-link" href="login.html">Cambiar perfil</a>
+  </header>
+
+  <main class="page">
+    <p class="eyebrow">PERFIL: ADMINISTRADOR</p>
+    <h1>Zonas francas y criterios</h1>
+    <p class="lead">Los criterios configurados aquí se aplicarán únicamente a las solicitudes nuevas.</p>
+
+    <!-- Listado de zonas -->
+    <section class="table-card">
+      <table>
+        <thead>
+          <tr><th>Zona franca</th><th>Inversión mínima</th><th>Empleos mínimos</th><th>Sectores permitidos</th><th>Acciones</th></tr>
+        </thead>
+        <tbody id="zoneRows"></tbody>
+      </table>
+    </section>
+
+    <!-- Formulario crear/editar -->
+    <section class="form-card">
+      <h2 id="formTitle">Nueva zona franca</h2>
+      <form id="zoneForm">
+        <input type="hidden" name="id">
+        <div class="form-grid">
+          <label>Nombre *<input name="name" required placeholder="Ej.: Zona Franca Coyol"></label>
+          <label>Inversión mínima (USD) *<input name="minInvestment" type="number" min="1" required></label>
+          <label>Empleos mínimos *<input name="minJobs" type="number" min="1" required></label>
+          <label>Sectores permitidos *<input name="sectors" required placeholder="Separe por coma"></label>
+        </div>
+        <div class="actions">
+          <button class="button primary">Guardar zona</button>
+          <button type="button" class="button secondary" id="cancelEdit">Limpiar formulario</button>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <!-- Footer compacto del panel -->
+  <footer class="footer-slim">
+    <small>© <span class="year">2026</span> PROCOMER · Administración de criterios</small>
+    <nav>
+      <a href="../../index.html">Inicio</a>
+      <a href="dashboardAdministrador.html">Panel principal</a>
+      <a href="centroAdministracion.html">Centro de Administración</a>
+      <a href="contacto.html">Contáctenos</a>
+    </nav>
+  </footer>
+
+  <div id="toast" class="toast"></div>
+  <script type="module" src="../js/zonas.js"></script>
+</body>
+</html>
