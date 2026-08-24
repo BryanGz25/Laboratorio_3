@@ -1,6 +1,12 @@
 /* PROCOMER · Consulta pública por código de seguimiento con ejemplos rápidos */
 import { getData, request, badge, esc } from './store.js';
 
+/* Botón volver: regresa a la página anterior (dashboard u origen) */
+document.getElementById('backBtn').addEventListener('click', () => {
+  if (history.length > 1) history.back();
+  else location.href = '../../index.html';
+});
+
 /* Chips de ejemplo: autocompletan y consultan de inmediato */
 document.querySelectorAll('.demo-code').forEach(chip => {
   chip.onclick = () => {
