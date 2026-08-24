@@ -1,20 +1,9 @@
-/* PROCOMER · Login interactivo: selector de perfiles, mostrar/ocultar contraseña,
+/* PROCOMER · Login interactivo: mostrar/ocultar contraseña,
    autocompletado de demo, validación con animaciones y fondo natural en bucle. */
 import { initNature } from './nature.js';
 import { roles, SESSION, $ } from './store.js';
 
 initNature();
-
-/* Selector de perfil tipo tarjetas */
-let selectedRole = 'Administrador';
-document.querySelectorAll('.role-card').forEach(card => {
-  card.addEventListener('click', () => {
-    document.querySelectorAll('.role-card').forEach(c => c.classList.remove('selected'));
-    card.classList.add('selected');
-    selectedRole = card.dataset.role;
-    document.querySelector('input[name="role"]').value = selectedRole;
-  });
-});
 
 /* Mostrar / ocultar contraseña */
 const passInput = $('#passInput');
@@ -31,14 +20,6 @@ document.querySelectorAll('.cred-chip').forEach(chip => {
   chip.addEventListener('click', () => {
     document.querySelector('input[name="username"]').value = chip.dataset.user;
     passInput.value = chip.dataset.pass;
-    ['Administrador', 'Analista', 'Empresa'].forEach(role => {
-      if (roles[role].user === chip.dataset.user) {
-        document.querySelectorAll('.role-card').forEach(c =>
-          c.classList.toggle('selected', c.dataset.role === role));
-        selectedRole = role;
-        document.querySelector('input[name="role"]').value = role;
-      }
-    });
   });
 });
 
@@ -47,14 +28,15 @@ const card = $('#authCard');
 $('#login').addEventListener('submit', e => {
   e.preventDefault();
   const f = new FormData(e.target);
-  const r = roles[selectedRole];
-  if (f.get('username') !== r.user || f.get('password') !== r.password) {
-    toast('Usuario, contraseña o perfil incorrectos.', true);
+  const entry = Object.entries(roles).find(([, r]) => r.user === f.get('username') && r.password === f.get('password'));
+  if (!entry) {
+    toast('Usuario o contraseña incorrectos.', true);
     card.classList.remove('shake');
     void card.offsetWidth; /* reinicia la animación */
     card.classList.add('shake');
     return;
   }
+  const [selectedRole, r] = entry;
   const btn = $('#submitBtn');
   btn.disabled = true;
   btn.innerHTML = '<span class="spinner"></span> Ingresando…';

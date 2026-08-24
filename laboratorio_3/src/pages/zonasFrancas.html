@@ -9,54 +9,78 @@
 <body>
 
   <!-- ============ ADMINISTRACIÓN DE ZONAS FRANCAS ============ -->
-  <header class="topbar">
-    <a class="brand" href="../../index.html">
-      <span class="logo-mark"><svg class="icon-svg" viewBox="0 0 24 24"><circle cx="11" cy="13" r="7"/><path d="M4 13h14"/><path d="M11 6c2.2 2 3.3 4.4 3.3 7s-1.1 5-3.3 7c-2.2-2-3.3-4.4-3.3-7s1.1-5 3.3-7z"/><path d="M16.8 10.8c-.2-3.6 1.9-5.8 5.2-5.6.2 3.6-1.9 5.8-5.2 5.6z" fill="currentColor" stroke="none"/></svg></span>
-      PROCOMER
-    </a>
-    <nav>
-      <a href="../../index.html">Inicio</a>
-      <a href="dashboardAdministrador.html">Administración</a>
-      <a href="centroAdministracion.html">Centro de Administración</a>
-      <a href="cumplimiento.html">Cumplimiento</a>
-    </nav>
-    <a class="login-link" href="login.html">Cambiar perfil</a>
-  </header>
+  <div class="app-container">
 
-  <main class="page">
-    <a class="back-btn" href="dashboardAdministrador.html">← Volver al panel principal</a>
-    <p class="eyebrow" style="margin-top:1rem;">PERFIL: ADMINISTRADOR</p>
-    <h1>Zonas francas y criterios</h1>
-    <p class="lead">Los criterios configurados aquí se aplicarán únicamente a las solicitudes nuevas.</p>
+    <!-- Barra lateral -->
+    <aside class="sidebar">
+      <a class="sidebar-brand" href="../../index.html">
+        <span class="logo-mark"><svg class="icon-svg" viewBox="0 0 24 24"><circle cx="11" cy="13" r="7"/><path d="M4 13h14"/><path d="M11 6c2.2 2 3.3 4.4 3.3 7s-1.1 5-3.3 7c-2.2-2-3.3-4.4-3.3-7s1.1-5 3.3-7z"/><path d="M16.8 10.8c-.2-3.6 1.9-5.8 5.2-5.6.2 3.6-1.9 5.8-5.2 5.6z" fill="currentColor" stroke="none"/></svg></span>
+        PROCOMER
+      </a>
+      <span class="role-tag">Perfil: Administrador</span>
 
-    <!-- Listado de zonas -->
-    <section class="table-card">
-      <table>
-        <thead>
-          <tr><th>Zona franca</th><th>Inversión mínima</th><th>Empleos mínimos</th><th>Sectores permitidos</th><th>Acciones</th></tr>
-        </thead>
-        <tbody id="zoneRows"></tbody>
-      </table>
-    </section>
+      <a class="nav-link" href="dashboardAdministrador.html">
+        <svg class="icon-svg" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="9" rx="1"/><rect x="14" y="3" width="7" height="5" rx="1"/><rect x="14" y="12" width="7" height="9" rx="1"/><rect x="3" y="16" width="7" height="5" rx="1"/></svg>
+        Panel principal
+      </a>
+      <a class="nav-link" href="centroAdministracion.html">
+        <svg class="icon-svg" viewBox="0 0 24 24"><path d="M12 2l8 4.5v9L12 20l-8-4.5v-9L12 2z"/><path d="M12 11l8-4.5M12 11v9M12 11L4 6.5"/></svg>
+        Centro de Administración
+      </a>
+      <a class="nav-link active" href="zonasFrancas.html">
+        <svg class="icon-svg" viewBox="0 0 24 24"><path d="M3 21h18M5 21V8l7-5 7 5v13"/><path d="M9 21v-6h6v6"/></svg>
+        Zonas francas
+      </a>
+      <a class="nav-link" href="cumplimiento.html">
+        <svg class="icon-svg" viewBox="0 0 24 24"><path d="M9 11l3 3 8-8"/><path d="M20 12v7a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h9"/></svg>
+        Cumplimiento y alertas
+      </a>
 
-    <!-- Formulario crear/editar -->
-    <section class="form-card">
-      <h2 id="formTitle">Nueva zona franca</h2>
-      <form id="zoneForm">
-        <input type="hidden" name="id">
-        <div class="form-grid">
-          <label>Nombre *<input name="name" required placeholder="Ej.: Zona Franca Coyol"></label>
-          <label>Inversión mínima (USD) *<input name="minInvestment" type="number" min="1" required></label>
-          <label>Empleos mínimos *<input name="minJobs" type="number" min="1" required></label>
-          <label>Sectores permitidos *<input name="sectors" required placeholder="Separe por coma"></label>
-        </div>
-        <div class="actions">
-          <button class="button primary">Guardar zona</button>
-          <button type="button" class="button secondary" id="cancelEdit">Limpiar formulario</button>
-        </div>
-      </form>
-    </section>
-  </main>
+      <div class="sidebar-exit">
+        <a class="nav-link" href="login.html">
+          <svg class="icon-svg" viewBox="0 0 24 24"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><path d="M16 17l5-5-5-5"/><path d="M21 12H9"/></svg>
+          Cerrar sesión
+        </a>
+      </div>
+    </aside>
+
+    <!-- Contenido principal -->
+    <main class="main-content">
+      <header class="header-panel">
+        <a class="back-btn" href="dashboardAdministrador.html">← Volver al panel principal</a>
+        <h1>Zonas francas y criterios</h1>
+        <p>Los criterios configurados aquí se aplicarán únicamente a las solicitudes nuevas.</p>
+      </header>
+
+      <!-- Listado de zonas -->
+      <section class="table-card">
+        <table>
+          <thead>
+            <tr><th>Zona franca</th><th>Inversión mínima</th><th>Empleos mínimos</th><th>Sectores permitidos</th><th>Acciones</th></tr>
+          </thead>
+          <tbody id="zoneRows"></tbody>
+        </table>
+      </section>
+
+      <!-- Formulario crear/editar -->
+      <section class="form-card">
+        <h2 id="formTitle">Nueva zona franca</h2>
+        <form id="zoneForm">
+          <input type="hidden" name="id">
+          <div class="form-grid">
+            <label>Nombre *<input name="name" required placeholder="Ej.: Zona Franca Coyol"></label>
+            <label>Inversión mínima (USD) *<input name="minInvestment" type="number" min="1" required></label>
+            <label>Empleos mínimos *<input name="minJobs" type="number" min="1" required></label>
+            <label>Sectores permitidos *<input name="sectors" required placeholder="Separe por coma"></label>
+          </div>
+          <div class="actions">
+            <button class="button primary">Guardar zona</button>
+            <button type="button" class="button secondary" id="cancelEdit">Limpiar formulario</button>
+          </div>
+        </form>
+      </section>
+    </main>
+  </div>
 
   <!-- Footer compacto del panel -->
   <footer class="footer-slim">
