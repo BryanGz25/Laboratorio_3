@@ -19,13 +19,20 @@ const data = getData();
 const r = request(new URLSearchParams(location.search).get('id'));
 const main = document.getElementById('detailMain');
 
+const backLink = session.role === 'Analista' ? 'dashboardAnalista.html'
+  : session.role === 'Administrador' ? 'dashboardAdministrador.html'
+    : 'dashboardEmpresa.html';
+const backLabel = session.role === 'Empresa' ? '← Volver a mi dashboard' : '← Volver al panel principal';
+
 if (!r) {
-  main.innerHTML = '<h1>Solicitud no encontrada</h1><p class="lead">No se encontró el expediente solicitado.</p>';
+  main.innerHTML = `<a class="back-btn" href="${backLink}">${backLabel}</a>
+    <h1 style="margin-top:1rem;">Solicitud no encontrada</h1><p class="lead">No se encontró el expediente solicitado.</p>`;
   throw '';
 }
 
 main.innerHTML = `
-  <p class="eyebrow">EXPEDIENTE</p>
+  <a class="back-btn" href="${backLink}">${backLabel}</a>
+  <p class="eyebrow" style="margin-top:1rem;">EXPEDIENTE</p>
   <h1>${r.id}</h1>
   <p class="lead"><b>${esc(r.company)}</b> · ${esc(zone(r.zone)?.name || 'Zona no disponible')} · Recibida el ${r.createdAt}</p>
 

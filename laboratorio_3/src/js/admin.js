@@ -27,7 +27,7 @@ $('#kpiRow').innerHTML = `
     <b class="kpi-value">${k.processed}</b>
     <span class="kpi-sub up">De ${k.total} recibidas en el sistema</span>
     <div class="kpi-bar"><i style="width:${Math.round((k.processed / Math.max(k.total, 1)) * 100)}%"></i></div>
-    <a class="kpi-link" href="dashboardAnalista.html">Ver mesa de análisis →</a>
+    <a class="kpi-link" href="centroAdministracion.html">Gestionar solicitudes →</a>
   </article>
   <article class="kpi-card">
     <div class="kpi-top">
